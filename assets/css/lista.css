@@ -1,0 +1,238 @@
+/* ====== ESTILO GENERAL ====== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #f4f7fa;
+  color: #333;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .1);
+}
+
+/* ====== TÍTULOS ====== */
+h2 {
+  color: #005A6D;
+  border-bottom: 2px solid #0078A3;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+/* ====== BOTONES ====== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: #0078A3;
+  color: #fff;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .05);
+  transition: background .2s ease;
+}
+.btn:hover {
+  background: #005a6d;
+}
+.btn.pdf {
+  background: #f5a21a;
+}
+.btn.ticket {
+  background: #00875a;
+}
+.btn.pdf:hover {
+  background: #d98c00;
+}
+.btn.ticket:hover {
+  background: #006b45;
+}
+
+/* ====== TABLA ====== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+thead th {
+  background: #005A6D;
+  color: #fff;
+  text-align: left;
+  padding: 10px;
+}
+td {
+  padding: 10px;
+  border-bottom: 1px solid #eaeef5;
+}
+tbody tr:nth-child(odd) {
+  background: #f9fafb;
+}
+tbody tr:hover {
+  background: #eef2f7;
+}
+
+/* ====== ESTADOS (BADGES) ====== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: .25rem .5rem;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 700;
+}
+.badge-pendiente {
+  background: #fff7e6;
+  color: #92400e;
+}
+.badge-entregado {
+  background: #ecfdf5;
+  color: #065f46;
+}
+.badge-cancelado {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+/* ====== FILTROS ====== */
+.filters,
+.group-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-end;
+  margin-bottom: 15px;
+}
+.filters label {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+}
+input[type="text"],
+input[type="date"],
+select {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ====== PAGINACIÓN ====== */
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+.pagination a {
+  margin: 0 3px;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #005A6D;
+  padding: 6px 10px;
+}
+.pagination a:hover {
+  background: #e6f4f8;
+}
+.pagination a.active {
+  background: #005A6D;
+  color: #fff;
+}
+
+/* ====== MENSAJES FLASH ====== */
+.flash {
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.flash.success {
+  background: #e6f7ef;
+  color: #065f46;
+}
+.flash.error {
+  background: #fde8e8;
+  color: #991b1b;
+}
+/* ====== TOPBAR (header unificado) ====== */
+.topbar {
+  background: #005A6D;
+  color: #fff;
+  padding: 12px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topbar .brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.topbar .topbar-nav {
+  display: flex;
+  gap: 10px;
+}
+
+/* ====== TABLA DEL INDEX (.tabla) ALINEADA COMO LA DE LISTA ====== */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+.tabla thead th {
+  background: #0078A3;
+  color: #fff;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.tabla tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid #e5e9f0;
+  vertical-align: middle;
+  font-size: 14px;
+}
+.tabla tbody tr:nth-child(odd) { background: #f9fafb; }
+.tabla tbody tr:hover { background: #eef6f9; }
+
+/* Responsive para .tabla (igual que la general) */
+@media (max-width: 900px) {
+  .tabla, .tabla thead, .tabla tbody, .tabla th, .tabla td, .tabla tr {
+    display: block;
+  }
+  .tabla thead { display: none; }
+  .tabla tr {
+    background: #fff;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    padding: 10px;
+  }
+  .tabla td {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 13px;
+  }
+  .tabla td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #444;
+    margin-right: 12px;
+  }
+}
